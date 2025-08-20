@@ -1,1 +1,150 @@
-<head></head>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>欢迎光临</title>
+  <meta name="description" content="欢迎光临！这是一个简洁美观的欢迎页面。" />
+  <style>
+    :root {
+      --bg-start: #0f172a;
+      --bg-end: #1e293b;
+      --card-bg: rgba(255, 255, 255, 0.06);
+      --card-border: rgba(255, 255, 255, 0.14);
+      --text-primary: #ffffff;
+      --text-secondary: #cbd5e1;
+      --accent: #22d3ee;
+      --accent-2: #a78bfa;
+      --btn-bg: #22d3ee;
+      --btn-text: #0f172a;
+      --btn-hover: #a78bfa;
+      --shadow: 0 10px 30px rgba(2, 8, 23, 0.65);
+    }
+    * {
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+    }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", Arial, sans-serif;
+      color: var(--text-primary);
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(34, 211, 238, 0.08), transparent 60%),
+                  radial-gradient(1000px 500px at 90% 30%, rgba(167, 139, 250, 0.08), transparent 60%),
+                  linear-gradient(160deg, var(--bg-start), var(--bg-end));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100svh;
+      line-height: 1.6;
+    }
+    .card {
+      width: min(720px, 92vw);
+      padding: 32px;
+      border-radius: 16px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      box-shadow: var(--shadow);
+      backdrop-filter: saturate(140%) blur(10px);
+      -webkit-backdrop-filter: saturate(140%) blur(10px);
+      animation: fadeIn 800ms ease forwards, float 6s ease-in-out infinite;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      color: var(--text-secondary);
+      background: rgba(148, 163, 184, 0.12);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      font-size: 13px;
+    }
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 0 6px rgba(34, 211, 238, 0.12);
+    }
+    h1 {
+      margin: 16px 0 8px;
+      font-size: clamp(28px, 4.4vw, 44px);
+      line-height: 1.15;
+      letter-spacing: 0.4px;
+    }
+    p.subtitle {
+      margin: 0 0 24px;
+      color: var(--text-secondary);
+      font-size: clamp(14px, 2.1vw, 18px);
+    }
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .button {
+      appearance: none;
+      border: 0;
+      outline: none;
+      cursor: pointer;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 15px;
+      transition: transform 120ms ease, filter 120ms ease, background 220ms ease, color 220ms ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .button.primary {
+      background: linear-gradient(90deg, var(--btn-bg), var(--accent-2));
+      color: var(--btn-text);
+    }
+    .button.secondary {
+      background: transparent;
+      color: var(--text-primary);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+    }
+    .button:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.06);
+    }
+    .button.primary:hover {
+      background: linear-gradient(90deg, var(--btn-hover), var(--accent));
+    }
+    .footer {
+      margin-top: 18px;
+      color: var(--text-secondary);
+      font-size: 12px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; translate: 0 6px; }
+      to { opacity: 1; translate: 0 0; }
+    }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-4px); }
+      100% { transform: translateY(0px); }
+    }
+  </style>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 24 24' fill='none' stroke='%2322d3ee' stroke-width='1.5'%3E%3Cpath d='M12 2l2.09 6.26H20l-5.17 3.76 2.09 6.26L12 14.52l-4.92 3.76 2.09-6.26L4 8.26h5.91L12 2z'/%3E%3C/svg%3E" />
+</head>
+<body>
+  <main class="card">
+    <span class="badge">
+      <span class="badge-dot"></span>
+      欢迎光临 · Welcome
+    </span>
+    <h1>欢迎光临！</h1>
+    <p class="subtitle">很高兴见到你。祝你今天心情愉快、事事顺利。</p>
+    <div class="actions">
+      <a class="button primary" href="#" onclick="alert('欢迎开启旅程！'); return false;">开始探索</a>
+      <a class="button secondary" href="https://www.baidu.com" target="_blank" rel="noreferrer">随便逛逛</a>
+    </div>
+    <div class="footer">按 Ctrl + D 收藏此页，常来看看。</div>
+  </main>
+</body>
+</html>
